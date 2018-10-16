@@ -318,19 +318,7 @@ server<-function(input, output){
     
     df <-df[df$YEAR == input$ySelected,]
     
-    
-    # fit=randomForest(factor(SEVERITY)~., data=df)
-    # 
-    # 
-    # set.seed(42)
-    # 
-    # # Extracts variable importance (Mean Decrease in Gini Index)
-    # # Sorts by variable importance and relevels factors to match ordering
-    # var_importance <- data_frame(variable=setdiff(colnames(df), "SEVERITY")
-    #                              ,importance=as.vector(importance(fit)))
-    # 
-    # var_importance <- arrange(var_importance, desc(importance))
-    # var_importance$variable <- factor(var_importance$variable, levels=var_importance$variable)
+
     if (input$ySelected=='2017') {
       var_importance <- readRDS("var_imp_2017.rds")
     }
